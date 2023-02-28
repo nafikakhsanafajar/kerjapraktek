@@ -1,0 +1,349 @@
+/**
+ * Owl Carousel v2.2.1
+ * Copyright 2013-2017 David Deutsch
+ * Licensed under  ()
+ */
+.owl-theme .owl-dots,.owl-theme .owl-nav{text-align:center;-webkit-tap-highlight-color:transparent}.owl-theme .owl-nav{margin-top:10px}.owl-theme .owl-nav [class*=owl-]{color:#FFF;font-size:14px;margin:5px;padding:4px 7px;background:#D6D6D6;display:inline-block;cursor:pointer;border-radius:3px}.owl-theme .owl-nav [class*=owl-]:hover{background:#869791;color:#FFF;text-decoration:none}.owl-theme .owl-nav .disabled{opacity:.5;cursor:default}.owl-theme .owl-nav.disabled+.owl-dots{margin-top:10px}.owl-theme .owl-dots .owl-dot{display:inline-block;zoom:1}.owl-theme .owl-dots .owl-dot span{width:10px;height:10px;margin:5px 7px;background:#D6D6D6;display:block;-webkit-backface-visibility:visible;transition:opacity .2s ease;border-radius:30px}.owl-theme .owl-dots .owl-dot.active span,.owl-theme .owl-dots .owl-dot:hover span{background:#869791}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Examin - Education and LMS Template">
+
+    <!-- ========== Page Title ========== -->
+    <title>SIPP PTPN IX</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="http://sipp.ptpnix.co.id/sipp/public/exa_assets/img/ptpn9.png" type="image/x-icon">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="http://sipp.ptpnix.co.id/sipp/public/exa_assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://sipp.ptpnix.co.id/sipp/public/exa_assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://sipp.ptpnix.co.id/sipp/public/exa_assets/css/flaticon-set.css" rel="stylesheet" />
+    <link href="http://sipp.ptpnix.co.id/sipp/public/exa_assets/css/magnific-popup.css" rel="stylesheet" />
+    <link href="http://sipp.ptpnix.co.id/sipp/public/exa_assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="http://sipp.ptpnix.co.id/sipp/public/exa_assets/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="http://sipp.ptpnix.co.id/sipp/public/exa_assets/css/animate.css" rel="stylesheet" />
+    <link href="http://sipp.ptpnix.co.id/sipp/public/exa_assets/css/bootsnav.css" rel="stylesheet" />
+    <link href="http://sipp.ptpnix.co.id/sipp/public/exa_assets/style.css" rel="stylesheet">
+    <link href="http://sipp.ptpnix.co.id/sipp/public/exa_assets/css/responsive.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5/html5shiv.min.js"></script>
+      <script src="assets/js/html5/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- ========== Google Fonts ========== -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
+
+</head>
+<style type="text/css">
+    .dataTables_wrapper .dataTables_filter input {
+        padding: 5px 10px !important;
+        min-height: auto !important;
+    }
+</style><body>
+
+    <!-- Preloader Start -->
+    <div class="se-pre-con"></div>
+    <!-- Preloader Ends -->
+
+    <!-- Start Header Top 
+        ============================================= -->
+        <div class="top-bar-area address-two-lines bg-dark text-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 address-info">
+                        <div class="info box">
+                            <ul>
+                                <li>
+                                    <span><i class="fas fa-map"></i>PTPN IX</span>Jl.Mugas Dalam(atas) Semarang
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-envelope-open"></i> Email</span>sekper@ptpn09.com
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-phone"></i>Contact</span> 024 8414635 / FAX 024 8449082  
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                     <a class="user-login text-right col-md-4" href="#">
+                            <img src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/img/logo3.png" class="logo" alt="Logo">
+                        </a>
+                        <!-- <div class="user-login text-right col-md-4">S
+                            <a  class="btn btn-primary" href="http://sipp.ptpnix.co.id/sipp/login">
+                                <i class="fas fa-user"></i> Login
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- End Header Top -->
+
+    <!-- Header 
+        ============================================= -->
+        <header id="home">
+
+            <!-- Start Navigation -->
+            <nav class="navbar navbar-default navbar-sticky bootsnav">
+
+                <!-- Start Top Search -->
+                <div class="container">
+                    <div class="row">
+                        <div class="top-search">
+                            <div class="input-group">
+                                <form action="#">
+                                    <input type="text" name="text" class="form-control" placeholder="Search">
+                                    <button type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>  
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Top Search -->
+
+                <div class="container">
+
+                    <!-- Start Atribute Navigation -->
+                    <div class="attr-nav">
+                        <ul>
+                            <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>        
+                    <!-- End Atribute Navigation -->
+
+                    <!-- Start Header Navigation -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="http://sipp.ptpnix.co.id/sipp">
+                            <img src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/img/logo9.png" class="logo" alt="Logo">
+                        </a>
+                       
+                    </div>
+                    <!-- End Header Navigation -->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
+                            <!-- <li>
+                                <a href="http://sipp.ptpnix.co.id/sipp">Beranda</a>
+                            </li> -->
+                            <li>
+                                <a href="http://sipp.ptpnix.co.id/sipp/pedoman">PEDOMAN</a>
+
+                            </li>
+                            <li>
+                                <a href="http://sipp.ptpnix.co.id/sipp/sop">SOP</a>
+                            </li>
+                            <li>
+                                <a href="http://sipp.ptpnix.co.id/sipp/suratedaran">DOKUMEN PENDUKUNG</a>
+                            </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Login Form 
+        ============================================= -->
+    <!-- End Login Form -->
+        <div class="banner-area content-top-heading less-paragraph text-normal">
+        <div id="bootcarousel" class="carousel slide animate_text carousel-fade" data-ride="carousel">
+
+            <!-- Wrapper for slides --> 
+            <div class="carousel-inner text-light carousel-zoom">
+                <div class="item active">
+                    <div class="slider-thumb bg-fixed" style="background-image:url(http://sipp.ptpnix.co.id/sipp/public/exa_assets/img/banner/ptpnix.jpg)"></div>
+                    <div class="box-table shadow dark">
+                        <div class="box-cell">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="content">
+                                            <h1 data-animation="animated slideInLeft">SISTEM INFORMASI PEDOMAN PERUSAHAAN</h1>
+                                            <h3 data-animation="animated slideInUp">PT PERKEBUNAN NUSANTARA IX</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Wrapper for slides -->
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#bootcarousel" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#bootcarousel" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div>
+    </div>
+    <div class="our-featues-area inc-trending-courses about-area default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 our-feature-items">
+                    <div class="row">
+
+                        <div class="col-md-12 less-bar info">
+                            <h4>SIPP PTPN IX</h4>
+                            <h1>SISTEM INFORMASI PEDOMAN PERUSAHAAN<br> PT PERKEBUNAN NUSANTARA IX</h1>
+                            <p>
+                                
+                            </p>
+                            <p>
+                               
+                            </p>
+                        </div>
+
+                        <!-- Start Fatures -->
+                        <div class="our-features">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="item malachite">
+                                    <div class="icon">
+                                        <i class="flaticon-education"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h4>PEDOMAN</h4>
+                                        <a href="http://sipp.ptpnix.co.id/sipp/pedoman" type="button" class="btn btn-dark border effect btn-sm" id="sweet_info">Selengkapnya</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="item java">
+                                    <div class="icon">
+                                        <i class="flaticon-book-2"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h4>STANDART OPERASIONAL PROSEDUR</h4>
+                                        <a href="http://sipp.ptpnix.co.id/sipp/sop" class="btn btn-dark border effect btn-sm">Selengkapnya</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="item mariner">
+                                    <div class="icon">
+                                        <i class="flaticon-faculty-shield"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h4>DOKUMEN PENDUKUNG</h4>
+                                            <a  class="btn btn-dark border effect btn-sm" href="http://sipp.ptpnix.co.id/sipp/suratedaran">
+                                                <i class=" folder-open"></i> Selengkapnya
+                                            </a>
+                                        <!-- <a href="#" class="btn btn-warning">Selengkapnya</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- <div class="col-md-6 col-sm-6">
+                                <div class="item brilliantrose">
+                                    <div class="icon">
+                                        <i class="flaticon-university-campus"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h4>DOKUMEN PERUSAHAAN</h4>
+                                        <a href="#" class="btn btn-dark border btn-sm">Selengkapnya</a>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>  
+               
+            </div>
+        </div>
+    </div>
+
+   
+
+
+    <!-- Start Footer 
+        ============================================= -->
+        <footer class="bg-dark default-padding-top text-light">
+            <div class="container">
+                <div class="row">
+                    <div class="f-items">
+                        <div class="col">
+                            <h4 class="mb-0">Disclaimer</h4>
+                            <p class="mb-0">Semua yang disajikan dalam web ini hanya dimaksudkan sebagai informasi, SOP ini merupakan dokumen resmi dan dapat dijadikan sebagai alat bukti yang sah.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      <!-- Start Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <p>&copy; Copyright 2019. All Rights Reserved by <a href="#">PTPN IX</a></p>
+                    </div>
+                    <div class="col-md-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms of user</a>
+                            </li>
+                            <li>
+                                <a href="#">License</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer Bottom -->
+</footer>
+<!-- End Footer -->
+
+    <!-- jQuery Frameworks
+        ============================================= -->
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/jquery-1.12.4.min.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/bootstrap.min.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/equal-height.min.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/jquery.appear.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/jquery.easing.min.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/modernizr.custom.13711.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/owl.carousel.min.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/wow.min.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/isotope.pkgd.min.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/count-to.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/bootsnav.js"></script>
+        <script src="http://sipp.ptpnix.co.id/sipp/public/exa_assets/js/main.js"></script>
+         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <!-- <script type="text/javascript">
+        $(document).ready(function() {
+            $('#datasop').DataTable();
+        } );
+        </script> -->     </body>
+        </html>
