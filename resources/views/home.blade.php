@@ -18,7 +18,7 @@
                                         <div class="content">
                                             <h1 data-animation="animated slideInLeft">KERJA PRAKTEK</h1>
                                             <h3 data-animation="animated slideInUp">DI PT PERKEBUNAN NUSANTARA IX</h3>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="#">DAFTAR</a>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="{{url('registrasi/kerjapraktek')}}">DAFTAR</a>
                                         </div>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@
                                         <div class="content">
                                             <h1 data-animation="animated slideInLeft">RISET PENELITIAN</h1>
                                             <h3 data-animation="animated slideInUp"> DI PT PERKEBUNAN NUSANTARA IX</h3>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="#">DAFTAR</a>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="{{url('registrasi/riset')}}">DAFTAR</a>
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                         <div class="content">
                                             <h1 data-animation="animated slideInLeft">KUNJUNGAN</h1>
                                             <h3 data-animation="animated slideInUp">PT PERKEBUNAN NUSANTARA IX</h3>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="#">DAFTAR</a>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-md" href="#{{url('registrasi/kunjungan')}}">DAFTAR</a>
                                         </div>
                                     </div>
                                 </div>

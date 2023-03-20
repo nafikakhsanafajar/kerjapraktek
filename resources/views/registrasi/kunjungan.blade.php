@@ -12,7 +12,7 @@
                         <!-- Star Tab Info -->
                         <div class="tab-info">
                            <h3>REGISTRASI KUNJUNGAN</h3>
-                            
+                           <p>Lakukan pendaftaran Kunjungan anda dengan mengisi form dibawah ini:</p>
                         </div>
                         <!-- End Tab Info -->
                     </div>

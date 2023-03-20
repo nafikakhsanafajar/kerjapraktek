@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
+// Route::get('/', function () {
+//     return view('home');
+// });
+Route::get('/','HomeController@homepage');
 Route::prefix('registrasi')->group(function(){
     Route::get('kerjapraktek','RegistrasiController@kerjapraktek');
     Route::get('riset','RegistrasiController@riset');

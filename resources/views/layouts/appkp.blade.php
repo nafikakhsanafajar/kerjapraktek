@@ -34,6 +34,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <link href="{{url('assets/exa_assets/css/bootsnav.css')}}" rel="stylesheet" />
     <link href="{{url('assets/exa_assets/style.css')}}" rel="stylesheet">
     <link href="{{url('assets/exa_assets/css/responsive.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"/>
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet" /> -->
 
     <!-- ========== Google Fonts ========== -->
@@ -84,7 +86,10 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{url('assets/exa_assets/js/count-to.js')}}"></script>
     <script src="{{url('assets/exa_assets/js/bootsnav.js')}}"></script>
     <script src="{{url('assets/exa_assets/js/main.js')}}"></script>
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    
+    @yield('jsbottom')
 </body>
 <!-- END BODY -->
 </html>

@@ -31,7 +31,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="{{url('/')}}">
                 <img src="{{url('assets/exa_assets/img/logo9.png')}}" class="logo" alt="Logo">
             </a>
         </div>

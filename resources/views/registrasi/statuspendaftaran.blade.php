@@ -11,7 +11,7 @@
 
                         <!-- Star Tab Info -->
                         <div class="tab-info">
-                           <h3>STATUS PENDAFTARAN</h3>
+                            <h3>STATUS PENDAFTARAN</h3>
                             <p>Periksa status pendaftaran anda dengan mengisi form dibawah ini:</p>
                         </div>
                         <!-- End Tab Info -->
