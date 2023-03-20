@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appkp')
 @section('content')
     <!-- Start Banner 
     ============================================= -->
@@ -61,6 +61,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
             <!-- End Wrapper for slides -->

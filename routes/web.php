@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::prefix('registrasi')->group(function(){
+    Route::get('kerjapraktek','RegistrasiController@kerjapraktek');
+    Route::get('riset','RegistrasiController@riset');
+    Route::get('kunjungan','RegistrasiController@kunjungan');
+    Route::get('statuspendaftaran','RegistrasiController@statuspendaftaran');
+});
