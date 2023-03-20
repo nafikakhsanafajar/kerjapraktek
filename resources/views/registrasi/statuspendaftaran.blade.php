@@ -15,6 +15,26 @@
                             <p>Periksa status pendaftaran anda dengan mengisi form dibawah ini:</p>
                         </div>
                         <!-- End Tab Info -->
+                        <div class="container">
+                            <div class="form-group row">
+                                <label class="col-sm-8 control-label">Cek Pendaftaran Anda Disini</label>
+                                <div class="col-sm-4">
+                                    <form class="example" action="action_page.php">
+                                        <input type="text" placeholder="Search.." name="search">
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                      </form>
+                                    
+                                </div>
+                                
+                            </div>
+                            {{-- <div class="row">
+                                <form class="example" action="action_page.php">
+                                <input type="text" placeholder="Search.." name="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                              </form>
+                            </div> --}}
+                            
+                        </div>
                     </div>
                 </div>
                 <!-- Start Sidebar -->

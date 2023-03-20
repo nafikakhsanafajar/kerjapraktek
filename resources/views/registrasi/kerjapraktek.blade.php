@@ -1,12 +1,5 @@
 @extends('layouts.appkp')
 @section('content')
-<?php 
-    $daterightnow = date('Y-m-d');
-    if(isset($_COOKIE['dateabsensi'])){
-        $daterightnow = $_COOKIE['dateabsensi'];
-    }
-
-?>
     
      <div class="course-details-area default-padding">
         <div class="container">
@@ -30,13 +23,8 @@
                                         <label class="col-sm-4 control-label">Tingkat Institusi</label>
 	                                    <div class="col-sm-8">
                                             <select name="tingkatinstitusi" data-placeholder="Choose One" class="width300 select2-offscreen tingkatinstitusi" tabindex="-1" title="" style="width: 100%">
-                                                <option namaarea="TK" value="TK">TK</option>
-	                                            <option namaarea="SD" value="SD">SD</option>
-                                                <option namaarea="SMP" value="SMP">SMP</option>
-                                                <option namaarea="SMA" value="SMA">SMA</option>
-                                                <option namaarea="S1" value="S1">S1</option>
-                                                <option namaarea="S2" value="S2">S2</option>
-                                                <option namaarea="S3" value="S3">S3</option>
+                                                <option namaarea="SMP" value="SEKOLAH">SMP/SMA/SMK</option>
+                                                <option namaarea="UNIV" value="UNIV">MAHASISWA</option>
                                                 <option namaarea="UMUM" value="UMUM">UMUM</option>
 	                                        </select>
 	                                    </div>
@@ -54,9 +42,25 @@
                                         <label class="col-sm-4 control-label">Lokasi</label>
 	                                    <div class="col-sm-8">
                                             <select name="lokasi" data-placeholder="Choose One" class="width300 select2-offscreen lokasi" tabindex="-1" title="" style="width: 100%">
+												<option namaarea="DIREKSI SMG" value="KANTOR DIREKSI SMG">KANTOR DIREKSI SEMARANG</option>
+												<option namaarea="DIREKSI SOLO" value="KANTOR DIREKSI SOLO">KANTOR DIREKSI SOLO</option>
                                                 <option namaarea="KRUMPUT" value="KEBUN KRUMPUT">KEBUN KRUMPUT</option>
 	                                            <option namaarea="KAWUNG" value="KEBUN KAWUNG">KEBUN KAWUNG</option>
                                                 <option namaarea="WARNASARI" value="KEBUN WARNASARI">KEBUN WARNASARI</option>
+												<option namaarea="KALIGUA" value="KEBUN KALIGUA">KEBUN KALIGUA</option>
+                                                <option namaarea="SILUWOK" value="KEBUN SILUWOK">KEBUN SILUWOK</option>
+	                                            <option namaarea="BLIMBING" value="KEBUN BLIMBING">KEBUN BLIMBING</option>
+                                                <option namaarea="JOLOTIGO" value="KEBUN JOLOTIGO">KEBUN JOLOTIGO</option>
+												<option namaarea="SEMUGIH" value="KANTOR SEMUGIH">KANTOR SEMUGIH</option>
+                                                <option namaarea="NGOBO" value="KEBUN NGOBO">KEBUN NGOBO</option>
+	                                            <option namaarea="GETAS" value="KEBUN GETAS">KEBUN GETAS</option>
+                                                <option namaarea="BATUJAMUS" value="KEBUN BATUJAMUS">KEBUN BATUJAMUS</option>
+												<option namaarea="SUKAMANGLI" value="KANTOR SUKAMANGLI">KANTOR SUKAMANGLI</option>
+                                                <option namaarea="JOLLONG" value="KEBUN JOLLONG">KEBUN JOLLONG</option>
+	                                            <option namaarea="MERBUH" value="KEBUN MERBUH">KEBUN MERBUH</option>
+                                                <option namaarea="BALONG" value="KEBUN BALONG">KEBUN BALONG</option>
+												<option namaarea="UPH" value="UNIT PRODUK HILIR">UNIT PRODUK HILIR</option>
+												<option namaarea="KAKOBA" value="KAMPOENG KOPI BANARAN">KAMPOENG KOPI BANARAN</option>
 	                                        </select>
 	                                    </div>
 	                                    
@@ -69,7 +73,7 @@
 	                                    
 	                                </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-4 control-label">Tanggal Pelaksanaan</label>
+                                        <label class="col-sm-4 control-label">Tanggal Mulai Pelaksanaan</label>
 	                                    <div class="col-sm-8">
 	                                        <div class="input-group mb15">
 	                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
@@ -77,6 +81,17 @@
 	                                        </div><!-- input-group -->
 	                                    </div>
                                     </div>
+
+									<div class="form-group row">
+                                        <label class="col-sm-4 control-label">Tanggal Berakhir Pelaksanaan</label>
+	                                    <div class="col-sm-8">
+	                                        <div class="input-group mb15">
+	                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+	                                            <input type="text" placeholder="yyyy-mm-dd" class="form-control datepickerstart" id="datepickerstart" value="{{$daterightnow}}" readonly='readonly' required>
+	                                        </div><!-- input-group -->
+	                                    </div>
+                                    </div>
+
                                 </div>
                                 <div class="col-md-6">
                                     

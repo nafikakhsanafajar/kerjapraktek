@@ -51,7 +51,7 @@
                         <li><a href="{{url('registrasi/kunjungan')}}" target="" >KUNJUNGAN</a></li><!-- form.php?md=KUN -->
                     </ul>
                 </li> 
-                <li><a href="{{url('registrasi/statuspendaftaran')}}" target="_blank">Status Pendaftaran</a></li><!-- search.php -->
+                <li><a href="{{url('registrasi/statuspendaftaran')}}" target="">Status Pendaftaran</a></li><!-- search.php -->
                 
 
             </ul>

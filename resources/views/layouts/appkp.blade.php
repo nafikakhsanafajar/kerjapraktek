@@ -41,6 +41,9 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- ========== Google Fonts ========== -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
 
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="{{url('assets/images/favicon.ico')}}">

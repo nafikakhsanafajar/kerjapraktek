@@ -13,18 +13,20 @@ use Excel;
 class RegistrasiController extends Controller
 {
     public function kerjapraktek(){
-        
-        return view('registrasi.kerjapraktek');
+        $daterightnow = date('Y-m-d');
+        return view('registrasi.kerjapraktek', compact('daterightnow'));
 
     }
     public function riset(){
-        
-        return view('registrasi.riset');
+        $daterightnow = date('Y-m-d');
+        return view('registrasi.riset', compact('daterightnow'));
 
     }
     public function kunjungan(){
+ 
+        $daterightnow = date('Y-m-d');
         
-        return view('registrasi.kunjungan');
+        return view('registrasi.kunjungan', compact('daterightnow'));
 
     }
     public function statuspendaftaran(){
