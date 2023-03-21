@@ -80,18 +80,20 @@
 	                                            <input type="text" placeholder="yyyy-mm-dd" class="form-control datepickerstart" id="datepickerstart" value="{{$daterightnow}}" readonly='readonly' required>
 	                                        </div><!-- input-group -->
 	                                    </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 control-label">Tanggal Berakhir Pelaksanaan</label>
-                                            <div class="col-sm-8">
-                                                <div class="input-group mb15">
-                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                                    <input type="text" placeholder="yyyy-mm-dd" class="form-control datepickerstart" id="datepickerstart" value="{{$daterightnow}}" readonly='readonly' required>
-                                                </div><!-- input-group -->
-                                            </div>
-                                        </div>
                                     </div>
+
+									<div class="form-group row">
+                                        <label class="col-sm-4 control-label">Tanggal Berakhir Pelaksanaan</label>
+	                                    <div class="col-sm-8">
+	                                        <div class="input-group mb15">
+	                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+	                                            <input type="text" placeholder="yyyy-mm-dd" class="form-control datepickerstart" id="datepickerstart" value="{{$daterightnow}}" readonly='readonly' required>
+	                                        </div><!-- input-group -->
+	                                    </div>
+                                    </div>
+									
                                 </div>
+								
                                 <div class="col-md-6">
                                     
                                     <div class="form-group opsidateclass row">
