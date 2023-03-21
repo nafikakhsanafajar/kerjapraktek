@@ -65,13 +65,7 @@
 	                                    </div>
 	                                    
 	                                </div>
-                                    <div class="form-group row">
-	                                    <label class="col-sm-4 control-label" for="readonlyinput">Total Biaya </label>
-	                                    <div class="col-sm-8">
-	                                        <input type="text" step="any" name="totalbiaya" value="" id="totalbiaya" class="form-control totalbiaya"  readonly>
-	                                    </div>
-	                                    
-	                                </div>
+                     
                                     <div class="form-group row">
                                         <label class="col-sm-4 control-label">Tanggal Mulai Pelaksanaan</label>
 	                                    <div class="col-sm-8">
@@ -87,10 +81,18 @@
 	                                    <div class="col-sm-8">
 	                                        <div class="input-group mb15">
 	                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-	                                            <input type="text" placeholder="yyyy-mm-dd" class="form-control datepickerstart" id="datepickerstart" value="{{$daterightnow}}" readonly='readonly' required>
+	                                            <input type="text" placeholder="yyyy-mm-dd" class="form-control datepickerend" id="datepickerend" value="{{$daterightnow}}" readonly='readonly' required>
 	                                        </div><!-- input-group -->
 	                                    </div>
                                     </div>
+
+									<div class="form-group row">
+	                                    <label class="col-sm-4 control-label" for="readonlyinput">Total Biaya </label>
+	                                    <div class="col-sm-8">
+	                                        <input type="text" step="any" name="totalbiaya" value="" id="totalbiaya" class="form-control totalbiaya"  readonly>
+	                                    </div>
+	                                    
+	                                </div>
 									
                                 </div>
 								
@@ -164,7 +166,7 @@
 	@endsection
     @section('jsbottom')
     <!-- End Fun Factor -->
-    <script type="text/javascript">
+	<script type="text/javascript">
 
 	
         $(".tingkatinstitusi, .lokasi").select2();
@@ -174,8 +176,46 @@
 	        startDate: new Date(2021, 10, 1),
 	        format: "yyyy-mm-dd"
 	    }).on('changeDate', function(e) {
-	        var dateText = $('.datepickerstart').val();
+	        var startdateText = $('.datepickerstart').val();
+			var enddateText = $('.datepickerend').val();
+			var tingkatinstitusi = $(".tingkatinstitusi").val();
+			hitung(tingkatinstitusi, startdateText, enddateText);
 	    });
+		$('.datepickerend').datepicker({
+	        
+	        autoclose: true,
+	        startDate: new Date(2021, 10, 1),
+	        format: "yyyy-mm-dd"
+	    }).on('changeDate', function(e) {
+			var startdateText = $('.datepickerstart').val();
+	        var enddateText = $('.datepickerend').val();
+			var tingkatinstitusi = $(".tingkatinstitusi").val();
+			hitung(tingkatinstitusi, startdateText, enddateText);
+	    });
+
+		$(".tingkatinstitusi").on('change', function() {
+			var tingkatinstitusi = $(this).val();
+			var startdateText = $('.datepickerstart').val();
+			var enddateText = $('.datepickerend').val();
+			hitung(tingkatinstitusi, startdateText, enddateText);
+			
+		});
+
+		function hitung(tingkatinstitusi, startdateText, enddateText) {
+			// console.log(tingkatinstitusi);
+			var dt1 = new Date(startdateText);
+      		var dt2 = new Date(enddateText);
+			var totalDays = Math.ceil((dt2.getTime()-dt1.getTime())/(1000*60*60*24));
+			var biaya = 50000;
+
+			if(tingkatinstitusi=='UNIV'){
+				biaya = 150000;
+			}
+			if(tingkatinstitusi=='UMUM'){
+				biaya = 200000;
+			}
+			$('.totalbiaya').val(Math.ceil(totalDays/30)*biaya);
+		}
         
     </script>
 @endsection

@@ -38,6 +38,15 @@
 	                                    </div>
 	                                    
 	                                </div>
+
+									<div class="form-group row">
+                                        <label class="col-sm-4 control-label">Jumlah Peserta</label>
+	                                    <div class="col-sm-8">
+												<input min="0" max="100" type="number" id="typeNumber" class="form-control" />
+	                                    </div>
+	                                    
+	                                </div>
+									
                                     <div class="form-group row">
                                         <label class="col-sm-4 control-label">Lokasi</label>
 	                                    <div class="col-sm-8">
@@ -65,13 +74,7 @@
 	                                    </div>
 	                                    
 	                                </div>
-                                    <div class="form-group row">
-	                                    <label class="col-sm-4 control-label" for="readonlyinput">Total Biaya </label>
-	                                    <div class="col-sm-8">
-	                                        <input type="text" step="any" name="totalbiaya" value="" id="totalbiaya" class="form-control totalbiaya"  readonly>
-	                                    </div>
-	                                    
-	                                </div>
+                                  
                                     <div class="form-group row">
                                         <label class="col-sm-4 control-label">Tanggal Mulai Pelaksanaan</label>
 	                                    <div class="col-sm-8">
@@ -91,6 +94,15 @@
 	                                        </div><!-- input-group -->
 	                                    </div>
                                     </div>
+
+									<div class="form-group row">
+	                                    <label class="col-sm-4 control-label" for="readonlyinput">Total Biaya </label>
+	                                    <div class="col-sm-8">
+	                                        <input type="text" step="any" name="totalbiaya" value="" id="totalbiaya" class="form-control totalbiaya"  readonly>
+	                                    </div>
+	                                    
+	                                </div>
+
                                 </div>
                                 <div class="col-md-6">
                                     
@@ -102,13 +114,7 @@
 	                                    </div>
 	                                    
 	                                </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 control-label">Jumlah Peserta</label>
-	                                    <div class="col-sm-8">
-												<input min="0" max="100" type="number" id="typeNumber" class="form-control" />
-	                                    </div>
-	                                    
-	                                </div>
+                                    
                                     <div class="form-group row">
 	                                    <label class="col-sm-4 control-label" for="readonlyinput">Email </label>
 	                                    <div class="col-sm-8">
