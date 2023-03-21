@@ -95,7 +95,7 @@
                                 <div class="col-md-6">
                                     
                                     <div class="form-group opsidateclass row">
-	                                    <input type="hidden" name="tipekp" value="KP" id="id_user" class="form-control id" readonly="readonly" required>
+										<input type="hidden" name="tipe" value="KUN" id="tipe" class="form-control tipe" readonly="readonly" required>
 	                                    <label class="col-sm-4 control-label" for="readonlyinput">Nama/PIC </label>
 	                                    <div class="col-sm-8">
 	                                        <input type="text" step="any" name="nama" value="" id="nama" class="form-control nama"  required>
@@ -159,4 +159,21 @@
         </div>
     </div>
     <!-- End Fun Factor -->
+	@endsection
+    @section('jsbottom')
+    <!-- End Fun Factor -->
+    <script type="text/javascript">
+
+	
+        $(".tingkatinstitusi, .lokasi").select2();
+        $('.datepickerstart').datepicker({
+	        
+	        autoclose: true,
+	        startDate: new Date(2021, 10, 1),
+	        format: "yyyy-mm-dd"
+	    }).on('changeDate', function(e) {
+	        var dateText = $('.datepickerstart').val();
+	    });
+        
+    </script>
 @endsection

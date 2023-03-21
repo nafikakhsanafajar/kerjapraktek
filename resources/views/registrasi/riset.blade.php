@@ -161,4 +161,21 @@
         </div>
     </div>
     <!-- End Fun Factor -->
+	@endsection
+    @section('jsbottom')
+    <!-- End Fun Factor -->
+    <script type="text/javascript">
+
+	
+        $(".tingkatinstitusi, .lokasi").select2();
+        $('.datepickerstart').datepicker({
+	        
+	        autoclose: true,
+	        startDate: new Date(2021, 10, 1),
+	        format: "yyyy-mm-dd"
+	    }).on('changeDate', function(e) {
+	        var dateText = $('.datepickerstart').val();
+	    });
+        
+    </script>
 @endsection

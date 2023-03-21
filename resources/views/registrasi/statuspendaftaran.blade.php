@@ -22,14 +22,17 @@
                                         <label class="col-sm-4 control-label">Masukan Nomor Pendaftaran</label>
 	                                    <div class="col-sm-8">
                                             <div class="form-outline">
-                                                <input type="search" id="form1" class="form-control" />
-                                                <button type="button" class="btn btn-primary">
-                                                    <i class="fas fa-search"></i>
+                                                <input type="search" id="searchdata" class="form-control" placeholder="Nomor Pendaftaran"/>
                                             </div>
+                                            
 	                                
 	                                    </div>
 	                                    
 	                                </div>
+                                    <div class="panel-body button-action">
+                                        <button class="btn btn-primary btn-rounded addplanner" ><i class="fas fa-search"></i> Search</button>
+                                    </div>
+                                    <div class="panel-body" id="errorMessage"> </div>
                                 </div>
                             </div>
                         </div>
