@@ -35,7 +35,9 @@
                                     <div class="panel-body" id="errorMessage"> </div>
                                 </div>
                             </div>
+                            
                         </div>
+                        
                     </div>
                 </div>
                 <!-- Start Sidebar -->
@@ -43,6 +45,49 @@
                 <!-- End Sidebar -->
             </div>
         </div>
+        <div class="container mt-3">
+          
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Tingkat Institusi</th>
+                    <th>Nama Institusi</th>
+                    <th>Lokasi</th>
+                    <th>Tanggal Mulai</th>
+                    <th>Tanggal Berakhir</th>
+                    <th>Total Biaya</th>
+                    <th>Nama</th>
+                    <th>NIM/NIS</th>
+                    <th>Email</th>
+                    <th>No Telp / HP</th>
+                    <th>Perihal Kerja Praktek</th>
+                    <th>File Surat Institusi</th>
+                    <th>File Kerja Praktek/CV</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Anna</td>
+                    <td>Pitt</td>
+                    <td>35</td>
+                    <td>New York</td>
+                    <td>USA</td>
+                    <td>Female</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
     </div>
     <!-- End Fun Factor -->
 @endsection
