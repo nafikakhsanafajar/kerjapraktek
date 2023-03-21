@@ -73,7 +73,7 @@
 	                                    
 	                                </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-4 control-label">Tanggal Pelaksanaan</label>
+                                        <label class="col-sm-4 control-label">Tanggal Mulai Pelaksanaan</label>
 	                                    <div class="col-sm-8">
 	                                        <div class="input-group mb15">
 	                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
