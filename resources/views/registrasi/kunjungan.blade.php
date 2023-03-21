@@ -105,11 +105,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 control-label">Jumlah Peserta</label>
 	                                    <div class="col-sm-8">
-                                            <select name="tingkatinstitusi" data-placeholder="Choose One" class="width300 select2-offscreen tingkatinstitusi" tabindex="-1" title="" style="width: 100%">
-                                                <option namaarea="SMP" value="SEKOLAH">5 - 15</option>
-                                                <option namaarea="UNIV" value="UNIV">15 - 25</option>
-                                                <option namaarea="UMUM" value="UMUM">25 - 50</option>
-	                                        </select>
+												<input min="0" max="100" type="number" id="typeNumber" class="form-control" />
 	                                    </div>
 	                                    
 	                                </div>
