@@ -203,7 +203,6 @@
 				 total = 100000*jml
 			}
 			$('[name=totalbiaya]').val(total)
-
 		}
         
     </script>
