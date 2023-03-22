@@ -23,9 +23,11 @@
                                         <label class="col-sm-4 control-label">Tingkat Institusi</label>
 	                                    <div class="col-sm-8">
                                             <select name="tingkatinstitusi" data-placeholder="Choose One" class="width300 select2-offscreen tingkatinstitusi" tabindex="-1" title="" style="width: 100%">
-                                                <option namaarea="SMP" value="SEKOLAH">SMP/SMA/SMK</option>
+                                                <option value="">-Pilih-</option>
+												<option namaarea="SMP" value="SEKOLAH">SMP/SMA/SMK</option>
                                                 <option namaarea="UNIV" value="UNIV">MAHASISWA</option>
-                                                <option namaarea="UMUM" value="UMUM">UMUM</option>
+                                                <option namaarea="UMUMDOM" value="UMUMDOM">UMUM/Domestik</option>
+												<option namaarea="UMUMMANCA" value="UMUMMANCA">UMUM/Mancanegara</option>
 	                                        </select>
 	                                    </div>
 	                                    
@@ -42,7 +44,7 @@
 									<div class="form-group row">
                                         <label class="col-sm-4 control-label">Jumlah Peserta</label>
 	                                    <div class="col-sm-8">
-												<input min="0" max="100" type="number" id="typeNumber" class="form-control" />
+												<input min="0" max="100" name="jmlPeserta"type="number" id="typeNumber" class="form-control" />
 	                                    </div>
 	                                    
 	                                </div>
@@ -180,6 +182,29 @@
 	    }).on('changeDate', function(e) {
 	        var dateText = $('.datepickerstart').val();
 	    });
+		$('[name=tingkatinstitusi]').on('change', function(){
+			var tingkatinstitusi = $(this).val();
+		$('[name=jmlPeserta]').on('change', function(){
+			var jmlPeserta = $(this).val();
+
+			hitung(tingkatinstitusi,jmlPeserta)
+		})
+			
+		})
+		function hitung(institusi,jml){
+			var total=0;
+			if(institusi==='SMP'){
+				 total = 15000*jml
+			}else if(institusi ==='UNIV'){
+				 total = 25000*jml
+			}else if(institusi ==='UMUMDOM'){
+				 total = 50000*jml
+			}else{
+				 total = 100000*jml
+			}
+			$('[name=totalbiaya]').val(total)
+
+		}
         
     </script>
 @endsection
