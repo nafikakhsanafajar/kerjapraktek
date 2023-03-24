@@ -30,10 +30,21 @@ class RegistrasiController extends Controller
 
     }
     public function statuspendaftaran(){
+        $koderegister = "";
+        if(isset($_GET['kode_register'])){
+            $koderegister = $_GET['kode_register'];
+        }
         
-        return view('registrasi.statuspendaftaran');
+        $datausers = DB::table('peserta')
+        ->where('kode_register','=',$koderegister)
+        ->get();  
+        $totaldata = count($datausers);
+        // dd($datausers);
+        return view('registrasi.statuspendaftaran', compact('datausers','totaldata','koderegister'));
 
     }
+
+    
 
     
 }

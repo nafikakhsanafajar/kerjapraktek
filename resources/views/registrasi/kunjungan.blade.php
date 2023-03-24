@@ -93,7 +93,7 @@
 	                                    <div class="col-sm-8">
 	                                        <div class="input-group mb15">
 	                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-	                                            <input type="text" placeholder="yyyy-mm-dd" class="form-control datepickerstart" id="datepickerstart" value="{{$daterightnow}}" readonly='readonly' required>
+	                                            <input type="text" placeholder="yyyy-mm-dd" class="form-control datepickerend" id="datepickerstart" value="{{$daterightnow}}" readonly='readonly' required>
 	                                        </div><!-- input-group -->
 	                                    </div>
                                     </div>
@@ -150,10 +150,14 @@
 	                                        <input type="file" step="any" name="judul" value="" id="judul" class="form-control judul"  required>
 	                                    </div>
 	                                </div>
-                                    <div class="panel-body button-action">
-	                                    <button class="btn btn-primary btn-rounded addplanner" >Submit</button>
+                                    <div class="form-group row">
+										<label class="col-sm-4 control-label" for="readonlyinput"></label>
+	                                    <button class="btn btn-primary btn-rounded addplanner col-sm-4" >Submit</button>
 	                                </div>
 	                                <div class="panel-body" id="errorMessage"> 
+	                                        
+	                                </div>
+									<div style="clear:both;"> 
 	                                        
 	                                </div>
                                 </div>
@@ -181,27 +185,53 @@
 	        startDate: new Date(2021, 10, 1),
 	        format: "yyyy-mm-dd"
 	    }).on('changeDate', function(e) {
-	        var dateText = $('.datepickerstart').val();
+	        var startdateText = $('.datepickerstart').val();
+	        var enddateText = $('.datepickerend').val();
+			var tingkatinstitusi = $(".tingkatinstitusi").val();
+			var jmlPeserta = $('[name=jmlPeserta]').val();
+			hitung(tingkatinstitusi, startdateText, enddateText, jmlPeserta);
+	    });
+		$('.datepickerend').datepicker({
+	        
+	        autoclose: true,
+	        startDate: new Date(2021, 10, 1),
+	        format: "yyyy-mm-dd"
+	    }).on('changeDate', function(e) {
+			var startdateText = $('.datepickerstart').val();
+	        var enddateText = $('.datepickerend').val();
+			var tingkatinstitusi = $(".tingkatinstitusi").val();
+			var jmlPeserta = $('[name=jmlPeserta]').val();
+			hitung(tingkatinstitusi, startdateText, enddateText, jmlPeserta);
 	    });
 		$('[name=tingkatinstitusi]').on('change', function(){
 			var tingkatinstitusi = $(this).val();
-		$('[name=jmlPeserta]').on('change', function(){
-			var jmlPeserta = $(this).val();
-
-			hitung(tingkatinstitusi,jmlPeserta)
-		})
+			var startdateText = $('.datepickerstart').val();
+	        var enddateText = $('.datepickerend').val();
+			var jmlPeserta = $('[name=jmlPeserta]').val();
+			hitung(tingkatinstitusi, startdateText, enddateText, jmlPeserta);
 			
 		})
-		function hitung(institusi,jml){
+		$('[name=jmlPeserta]').on('change', function(){
+			var jmlPeserta = $(this).val();
+			var tingkatinstitusi = $(this).val();
+			var startdateText = $('.datepickerstart').val();
+	        var enddateText = $('.datepickerend').val();
+			hitung(tingkatinstitusi, startdateText, enddateText, jmlPeserta);
+		})
+		function hitung(institusi, startdateText, enddateText, jml){
+			var dt1 = new Date(startdateText);
+      		var dt2 = new Date(enddateText);
+			var totalDays = Math.ceil((dt2.getTime()-dt1.getTime())/(1000*60*60*24));
+
 			var total=0;
-			if(institusi==='SMP'){
-				 total = 15000*jml
+			if(institusi==='SEKOLAH'){
+				 total = (totalDays+1)*15000*jml
 			}else if(institusi ==='UNIV'){
-				 total = 25000*jml
+				 total = (totalDays+1)*25000*jml
 			}else if(institusi ==='UMUMDOM'){
-				 total = 50000*jml
+				 total = (totalDays+1)*50000*jml
 			}else{
-				 total = 100000*jml
+				 total = (totalDays+1)*100000*jml
 			}
 			$('[name=totalbiaya]').val(total)
 		}

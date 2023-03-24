@@ -215,7 +215,7 @@
 			if(tingkatinstitusi=='UMUM'){
 				biaya = 200000;
 			}
-			$('.totalbiaya').val(Math.ceil(totalDays/30)*biaya);
+			$('.totalbiaya').val(Math.ceil((totalDays+1)/30)*biaya);
 		}
         
     </script>
