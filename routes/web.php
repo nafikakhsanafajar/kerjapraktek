@@ -20,4 +20,6 @@ Route::prefix('registrasi')->group(function(){
     Route::get('riset','RegistrasiController@riset');
     Route::get('kunjungan','RegistrasiController@kunjungan');
     Route::get('statuspendaftaran','RegistrasiController@statuspendaftaran');
+
+    Route::post('func_insertkerjapraktek','RegistrasiController@func_insertkerjapraktek');
 });

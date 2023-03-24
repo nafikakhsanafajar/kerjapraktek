@@ -109,33 +109,33 @@
 
 	
             $(".container").on('click', '.btn-primary.addplanner', function(event) {
-                    event.preventDefault();
-                    // $(".btn-primary").removeClass('addplanner');
-                    
-                    var koderegistrasi = $('#searchdata').val();
-                    
+                event.preventDefault();
+                // $(".btn-primary").removeClass('addplanner');
+                
+                var koderegistrasi = $('#searchdata').val();
+                
 
-                    if (koderegistrasi!="")
-                        {
-                            $("#errorMessage").html("");
-                            $("#errorMessage").html("<span class='logo'><i class='fa fa-spinner'></i></span> <span class='data'> Running Process</span>");
-                            $("#errorMessage").fadeIn(800);
-                            window.scrollTo(0, 100);
-
-                            setTimeout( function() 
-                            {
-                                window.location.href = '{{url("registrasi/statuspendaftaran?kode_register=")}}'+koderegistrasi;
-                            }, 2000);
-                        
-                    }
-                    else{
+                if (koderegistrasi!="")
+                    {
                         $("#errorMessage").html("");
-                        $("#errorMessage").html("<span class='logo'><i class='fa fa-ban'></i></span><span class='data'> Kode registrasi wajib diisi.</span>");
-                        $("#errorMessage").fadeIn(800).fadeOut(3000);
+                        $("#errorMessage").html("<span class='logo'><i class='fa fa-spinner'></i></span> <span class='data'> Running Process</span>");
+                        $("#errorMessage").fadeIn(800);
                         window.scrollTo(0, 100);
-                        
-                    }
 
-                });
+                        setTimeout( function() 
+                        {
+                            window.location.href = '{{url("registrasi/statuspendaftaran?kode_register=")}}'+koderegistrasi;
+                        }, 2000);
+                    
+                }
+                else{
+                    $("#errorMessage").html("");
+                    $("#errorMessage").html("<span class='logo'><i class='fa fa-ban'></i></span><span class='data'> Kode registrasi wajib diisi.</span>");
+                    $("#errorMessage").fadeIn(800).fadeOut(3000);
+                    window.scrollTo(0, 100);
+                    
+                }
+
+            });
     </script>
 @endsection

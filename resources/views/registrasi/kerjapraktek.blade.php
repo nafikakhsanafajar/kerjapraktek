@@ -138,13 +138,13 @@
                                     <div class="form-group row">
 	                                    <label class="col-sm-4 control-label" for="readonlyinput">File Surat Institusi</label>
 	                                    <div class="col-sm-8">
-	                                        <input type="file" step="any" name="judul" value="" id="judul" class="form-control judul"  required>
+	                                        <input type="file" step="any" name="judulsi" value="" id="judulsi" class="form-control judulsi"  required>
 	                                    </div>
 	                                </div>
                                     <div class="form-group row">
 	                                    <label class="col-sm-4 control-label" for="readonlyinput">File Kerja Praktek / CV</label>
 	                                    <div class="col-sm-8">
-	                                        <input type="file" step="any" name="judul" value="" id="judul" class="form-control judul"  required>
+	                                        <input type="file" step="any" name="judulfile" value="" id="judulfile" class="form-control judulfile"  required>
 	                                    </div>
 	                                </div>
                                     <div class="panel-body button-action">
@@ -217,6 +217,116 @@
 			}
 			$('.totalbiaya').val(Math.ceil((totalDays+1)/30)*biaya);
 		}
+
+		$(".container").on('click', '.btn-primary.addplanner', function(event) {
+			event.preventDefault();
+			$(".btn-primary").removeClass('addplanner');
+			
+			var tingkatinstitusi = $('.tingkatinstitusi').val();
+			var namainstitusi = $('.namainstitusi').val();
+			var lokasi = $('.lokasi').val();
+			var startdateText = $('.datepickerstart').val();
+			var enddateText = $('.datepickerend').val();
+			var totalbiaya = $('.totalbiaya').val();
+
+			var tipe = $('.tipe').val();
+			var nim = $('.nim').val();
+			var email = $('.email').val();
+			var notelp = $('.notelp').val();
+			var judul = $('.judul').val();
+
+			var judulsi = $('.judulsi').val();
+			var judulfile = $('.judulfile').val();
+			console.log(lokasi);
+			
+			
+			// var koderegistrasi = $('#searchdata').val();
+			
+			if (tingkatinstitusi!="" )
+			// if (tingkatinstitusi!="" && namainstitusi!="" && lokasi!="" && startdateText!="" 
+			// && enddateText!="" && totalbiaya!="" && tipe!="" && nim!="" && notelp!="" && judul!="" )
+				{
+					$("#errorMessage").html("");
+					$("#errorMessage").html("<span class='logo'><i class='fa fa-spinner'></i></span> <span class='data'> Running Process</span>");
+					$("#errorMessage").fadeIn(800);
+					window.scrollTo(0, 100);
+					ajaxAddPlanner();
+				
+			}
+			else{
+				$("#errorMessage").html("");
+				$("#errorMessage").html("<span class='logo'><i class='fa fa-ban'></i></span><span class='data'> Pastikan semua isian terisi wajib diisi.</span>");
+				$("#errorMessage").fadeIn(800).fadeOut(3000);
+				window.scrollTo(0, 100);
+				
+			}
+
+
+
+		});
+
+		function ajaxAddPlanner(){
+			var tingkatinstitusi = $('.tingkatinstitusi').val();
+			var namainstitusi = $('.namainstitusi').val();
+			var lokasi = $('.lokasi').val();
+			var startdateText = $('.datepickerstart').val();
+			var enddateText = $('.datepickerend').val();
+			var totalbiaya = $('.totalbiaya').val();
+
+			
+			var tipe = $('.tipe').val();
+			var nim = $('.nim').val();
+			var email = $('.email').val();
+			var notelp = $('.notelp').val();
+			var judul = $('.judul').val();
+
+			var judulsi = $('.judulsi').val();
+			var judulfile = $('.judulfile').val();
+
+			
+				var formData = new FormData();
+					formData.append('tipe', tipe);
+					formData.append('namainstitusi', namainstitusi);
+					formData.append('tingkatinstitusi', tingkatinstitusi);
+					formData.append('lokasi', lokasi);
+					formData.append('startdateText', startdateText);
+					formData.append('enddateText', enddateText);
+
+					formData.append('totalbiaya', totalbiaya);
+					formData.append('nim', nim);
+					formData.append('email', email);
+					formData.append('notelp', notelp);
+					formData.append('judul', judul);
+					formData.append('latekspekat', latekspekat);
+
+				$.ajaxSetup({
+					headers: {
+						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					}
+				});
+				jQuery.ajax({
+					url: "{{url('/')}}registrasi/func_insertkerjapraktek",
+					type: 'POST',
+					cache: false, 
+					processData: false,
+					contentType: false,
+					data: formData,
+					success: function (result) {
+
+						$("#errorMessages").html("<span class='logo'><i class='fa fa-check-circle-o'></i></span><br><br><span class='data'> "+result+"</span>");
+						$("#errorMessages").fadeIn(500);
+						window.scrollTo(0, 100);
+						$(".button_action .btn-primary").addClass('addplanner');
+
+						setTimeout(function(){ location.reload(); }, 1000);
+
+					}
+					
+				});
+				console.log('berhasil');
+
+
+		};
         
     </script>
 @endsection

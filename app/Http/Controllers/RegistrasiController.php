@@ -43,6 +43,13 @@ class RegistrasiController extends Controller
         return view('registrasi.statuspendaftaran', compact('datausers','totaldata','koderegister'));
 
     }
+    public function func_insertkerjapraktek(){
+ 
+        $daterightnow = date('Y-m-d');
+        
+        return 'sukses';
+
+    }
 
     
 
