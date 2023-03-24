@@ -22,7 +22,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 control-label">Tingkat Institusi</label>
 	                                    <div class="col-sm-8">
-                                            <select name="tingkatinstitusi" data-placeholder="Choose One" class="width300 select2-offscreen tingkatinstitusi" tabindex="-1" title="" style="width: 100%">
+                                            <select name="tingkatinstitusi" data-placeholder="Tingkat Institusi" class="width300 select2-offscreen tingkatinstitusi" tabindex="-1" title="" style="width: 100%">
                                                 <option value="">-Pilih-</option>
 												<option namaarea="SMP" value="SEKOLAH">SMP/SMA/SMK</option>
                                                 <option namaarea="UNIV" value="UNIV">MAHASISWA</option>
@@ -44,7 +44,7 @@
 									<div class="form-group row">
                                         <label class="col-sm-4 control-label">Jumlah Peserta</label>
 	                                    <div class="col-sm-8">
-												<input min="0" max="100" name="jmlPeserta"type="number" id="typeNumber" class="form-control" />
+												<input min="0" max="100" name="jmlPeserta"type="number" placeholder="0" id="typeNumber" class="form-control" />
 	                                    </div>
 	                                    
 	                                </div>
@@ -52,7 +52,8 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 control-label">Lokasi</label>
 	                                    <div class="col-sm-8">
-                                            <select name="lokasi" data-placeholder="Choose One" class="width300 select2-offscreen lokasi" tabindex="-1" title="" style="width: 100%">
+                                            <select name="lokasi" data-placeholder="Lokasi Pelaksanaan" class="width300 select2-offscreen lokasi" tabindex="-1" title="" style="width: 100%">
+												<option value="">-Pilih-</option>
                                                 <option namaarea="DIREKSI SMG" value="KANTOR DIREKSI SMG">KANTOR DIREKSI SEMARANG</option>
 												<option namaarea="DIREKSI SOLO" value="KANTOR DIREKSI SOLO">KANTOR DIREKSI SOLO</option>
                                                 <option namaarea="KRUMPUT" value="KEBUN KRUMPUT">KEBUN KRUMPUT</option>
@@ -100,7 +101,7 @@
 									<div class="form-group row">
 	                                    <label class="col-sm-4 control-label" for="readonlyinput">Total Biaya </label>
 	                                    <div class="col-sm-8">
-	                                        <input type="text" step="any" name="totalbiaya" value="" id="totalbiaya" class="form-control totalbiaya"  readonly>
+	                                        <input type="text" placeholder="0" step="any" name="totalbiaya" value="" id="totalbiaya" class="form-control totalbiaya"  readonly>
 	                                    </div>
 	                                    
 	                                </div>
