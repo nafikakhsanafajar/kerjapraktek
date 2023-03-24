@@ -43,11 +43,13 @@ class RegistrasiController extends Controller
         return view('registrasi.statuspendaftaran', compact('datausers','totaldata','koderegister'));
 
     }
-    public function func_insertkerjapraktek(){
+    public function func_insertkerjapraktek(Request $request){
  
-        $daterightnow = date('Y-m-d');
+        $daterightnow       = date('Y-m-d');
+        $namainstitusi            = $request->input('namainstitusi');
+        $tingkatinstitusi         = $request->input('tingkatinstitusi');
         
-        return 'sukses';
+        return $tingkatinstitusi;
 
     }
 

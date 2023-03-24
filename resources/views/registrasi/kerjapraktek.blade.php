@@ -1,7 +1,7 @@
 @extends('layouts.appkp')
 @section('content')
-    
-     <div class="course-details-area default-padding">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+    <div class="course-details-area default-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -297,7 +297,7 @@
 					formData.append('email', email);
 					formData.append('notelp', notelp);
 					formData.append('judul', judul);
-					formData.append('latekspekat', latekspekat);
+					// formData.append('latekspekat', latekspekat);
 
 				$.ajaxSetup({
 					headers: {
@@ -305,20 +305,20 @@
 					}
 				});
 				jQuery.ajax({
-					url: "{{url('/')}}registrasi/func_insertkerjapraktek",
+					url: "{{url('/')}}/registrasi/func_insertkerjapraktek",
 					type: 'POST',
 					cache: false, 
 					processData: false,
 					contentType: false,
 					data: formData,
 					success: function (result) {
+						console.log(result);
+						// $("#errorMessages").html("<span class='logo'><i class='fa fa-check-circle-o'></i></span><br><br><span class='data'> "+result+"</span>");
+						// $("#errorMessages").fadeIn(500);
+						// window.scrollTo(0, 100);
+						// $(".button_action .btn-primary").addClass('addplanner');
 
-						$("#errorMessages").html("<span class='logo'><i class='fa fa-check-circle-o'></i></span><br><br><span class='data'> "+result+"</span>");
-						$("#errorMessages").fadeIn(500);
-						window.scrollTo(0, 100);
-						$(".button_action .btn-primary").addClass('addplanner');
-
-						setTimeout(function(){ location.reload(); }, 1000);
+						// setTimeout(function(){ location.reload(); }, 1000);
 
 					}
 					
