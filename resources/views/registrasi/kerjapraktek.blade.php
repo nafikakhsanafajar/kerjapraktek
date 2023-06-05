@@ -238,10 +238,7 @@
 			var judulsi = $('.judulsi').val();
 			var judulfile = $('.judulfile').val();
 			
-			
-			// var koderegistrasi = $('#searchdata').val();
-			
-			// if (tingkatinstitusi!="" && namainstitusi!="" && lokasi!="" )
+
 			if (tingkatinstitusi!="" && namainstitusi!="" && lokasi!="" && startdateText!="" 
 			&& enddateText!="" && totalbiaya!="" && tipe!="" && nim!="" && notelp!="" && judul!="" && judulsi!="" && judulfile!="" )
 				{
