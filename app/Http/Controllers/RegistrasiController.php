@@ -46,10 +46,60 @@ class RegistrasiController extends Controller
     public function func_insertkerjapraktek(Request $request){
  
         $daterightnow       = date('Y-m-d');
+        $datekode = date('dmyy');
         $namainstitusi            = $request->input('namainstitusi');
         $tingkatinstitusi         = $request->input('tingkatinstitusi');
+        $tipe         = $request->input('tipe');
+        $lokasi         = $request->input('lokasi');
+        $startdateText         = $request->input('startdateText');
+        $enddateText         = $request->input('enddateText');
+        $totalbiaya         = $request->input('totalbiaya');
+        $nim         = $request->input('nim');
+        $email         = $request->input('email');
+        $notelp         = $request->input('notelp');
+        $judul         = $request->input('judul');
+        $judulsi         = $request->file('judulsi');
+        $judulfile         = $request->file('judulfile');
+        $filenamesi = "";
+        $filenamedockp = "";
+        $koderegister ="KP-".$datekode.".".rand(10,1000);
+        $password =bcript($koderegister);
+
+
+        if($judulsi!="" and $judulsi->getClientOriginalExtension()=="pdf"){
+            // $file = $request->file('judulsi');
+            $filenamesi = $nik.'.'.date('ymd').time().'.'.$request->file('judulsi')->getClientOriginalExtension();
+            $path = $file->move(public_path('suratinstitusi'), $filename);
+        }    
+        if($judulfile!="" and $judulfile->getClientOriginalExtension()=="pdf"){
+            // $file = $request->file('judulsi');
+            $filenamedockp = $nik.'.'.date('ymd').time().'.'.$request->file('judulfile')->getClientOriginalExtension();
+            $path = $file->move(public_path('dockp'), $filename);
+        }  
         
-        return $tingkatinstitusi;
+        $id= DB::table('peserta')->insertGetId([
+            'kode_register'             => $koderegister, 
+            'password'             => $password,
+            'jml_peserta'        => 1, 
+            'jenis'       => "KP", 
+            'tingat_institusi'     => $tingkatinstitusi,
+            'nama_institusi'              => $namainstitusi, 
+            'surat_ins'    => $filenamesi,
+            'email'     => $email, 
+            'hp'     => $notelp, 
+            'id_lokasi'            => $lokasi,
+            'tot_biaya'          => $totalbiaya,
+            'tgl_pelaksanaan'          => $startdateText,
+            'tgl_akhir'          => $enddateText,
+            'status'          => 1,
+            'nim'          => $nim,
+            'nama'          => $nama,
+            'judul'          => $judul,
+            'file_izin'          => $filenamedockp
+        ]);
+        
+        
+        return "Sukses";
 
     }
 

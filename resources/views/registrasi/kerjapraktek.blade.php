@@ -136,13 +136,13 @@
 	                                    </div>
 	                                </div>
                                     <div class="form-group row">
-	                                    <label class="col-sm-4 control-label" for="readonlyinput">File Surat Institusi</label>
+	                                    <label class="col-sm-4 control-label" for="readonlyinput">File Surat Institusi (*PDF)</label>
 	                                    <div class="col-sm-8">
 	                                        <input type="file" step="any" name="judulsi" value="" id="judulsi" class="form-control judulsi"  required>
 	                                    </div>
 	                                </div>
                                     <div class="form-group row">
-	                                    <label class="col-sm-4 control-label" for="readonlyinput">File Kerja Praktek / CV</label>
+	                                    <label class="col-sm-4 control-label" for="readonlyinput">File Kerja Praktek / CV (*PDF)</label>
 	                                    <div class="col-sm-8">
 	                                        <input type="file" step="any" name="judulfile" value="" id="judulfile" class="form-control judulfile"  required>
 	                                    </div>
@@ -237,14 +237,13 @@
 
 			var judulsi = $('.judulsi').val();
 			var judulfile = $('.judulfile').val();
-			console.log(lokasi);
 			
 			
 			// var koderegistrasi = $('#searchdata').val();
 			
-			if (tingkatinstitusi!="" )
-			// if (tingkatinstitusi!="" && namainstitusi!="" && lokasi!="" && startdateText!="" 
-			// && enddateText!="" && totalbiaya!="" && tipe!="" && nim!="" && notelp!="" && judul!="" )
+			// if (tingkatinstitusi!="" && namainstitusi!="" && lokasi!="" )
+			if (tingkatinstitusi!="" && namainstitusi!="" && lokasi!="" && startdateText!="" 
+			&& enddateText!="" && totalbiaya!="" && tipe!="" && nim!="" && notelp!="" && judul!="" && judulsi!="" && judulfile!="" )
 				{
 					$("#errorMessage").html("");
 					$("#errorMessage").html("<span class='logo'><i class='fa fa-spinner'></i></span> <span class='data'> Running Process</span>");
@@ -297,7 +296,8 @@
 					formData.append('email', email);
 					formData.append('notelp', notelp);
 					formData.append('judul', judul);
-					// formData.append('latekspekat', latekspekat);
+					formData.append('judulsi', judulsi);
+					formData.append('judulfile', judulfile);
 
 				$.ajaxSetup({
 					headers: {
@@ -312,13 +312,12 @@
 					contentType: false,
 					data: formData,
 					success: function (result) {
-						console.log(result);
-						// $("#errorMessages").html("<span class='logo'><i class='fa fa-check-circle-o'></i></span><br><br><span class='data'> "+result+"</span>");
-						// $("#errorMessages").fadeIn(500);
-						// window.scrollTo(0, 100);
-						// $(".button_action .btn-primary").addClass('addplanner');
-
-						// setTimeout(function(){ location.reload(); }, 1000);
+						// console.log(result);
+						
+						$("#errorMessages").html(result);
+						$("#errorMessages").fadeIn(500);
+						window.scrollTo(0, 100);
+						setTimeout(function(){ location.reload(); }, 1000);
 
 					}
 					
