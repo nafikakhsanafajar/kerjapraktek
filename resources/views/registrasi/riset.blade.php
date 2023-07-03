@@ -130,7 +130,7 @@
 	                                    
 	                                </div>
                                     <div class="form-group row">
-	                                    <label class="col-sm-4 control-label" for="readonlyinput">Perihal Kerja Praktek</label>
+	                                    <label class="col-sm-4 control-label" for="readonlyinput">Perihal Riset & Penelitian</label>
 	                                    <div class="col-sm-8">
 	                                        <input type="text" step="any" name="judul" value="" id="judul" class="form-control judul"  required>
 	                                    </div>
@@ -218,6 +218,112 @@
 			}
 			$('.totalbiaya').val(Math.ceil((totalDays+1)/30)*biaya);
 		}
+
+		$(".container").on('click', '.btn-primary.addplanner', function(event) {
+			event.preventDefault();
+			$(".btn-primary").removeClass('addplanner');
+			
+			var tingkatinstitusi = $('.tingkatinstitusi').val();
+			var namainstitusi = $('.namainstitusi').val();
+			var lokasi = $('.lokasi').val();
+			var startdateText = $('.datepickerstart').val();
+			var enddateText = $('.datepickerend').val();
+			var totalbiaya = $('.totalbiaya').val();
+
+			var tipe = $('.tipe').val();
+			var nim = $('.nim').val();
+			var email = $('.email').val();
+			var notelp = $('.notelp').val();
+			var judul = $('.judul').val();
+
+			var judulsi = $('.judulsi').val();
+			var judulfile = $('.judulfile').val();
+			
+
+			if (tingkatinstitusi!="" && namainstitusi!="" && lokasi!="" && startdateText!="" 
+			&& enddateText!="" && totalbiaya!="" && tipe!="" && nim!="" && notelp!="" && judul!="" && judulsi!="" && judulfile!="" )
+				{
+					$("#errorMessage").html("");
+					$("#errorMessage").html("<span class='logo'><i class='fa fa-spinner'></i></span> <span class='data'> Running Process</span>");
+					$("#errorMessage").fadeIn(800);
+					window.scrollTo(0, 100);
+					ajaxAddPlanner();
+				
+			}
+			else{
+				$("#errorMessage").html("");
+				$("#errorMessage").html("<span class='logo'><i class='fa fa-ban'></i></span><span class='data'> Pastikan semua isian terisi wajib diisi.</span>");
+				$("#errorMessage").fadeIn(800).fadeOut(3000);
+				window.scrollTo(0, 100);
+				
+			}
+
+
+
+		});
+
+		function ajaxAddPlanner(){
+			var tingkatinstitusi = $('.tingkatinstitusi').val();
+			var namainstitusi = $('.namainstitusi').val();
+			var lokasi = $('.lokasi').val();
+			var startdateText = $('.datepickerstart').val();
+			var enddateText = $('.datepickerend').val();
+			var totalbiaya = $('.totalbiaya').val();
+
+			
+			var tipe = $('.tipe').val();
+			var nim = $('.nim').val();
+			var email = $('.email').val();
+			var notelp = $('.notelp').val();
+			var judul = $('.judul').val();
+
+			var judulsi = $('.judulsi').val();
+			var judulfile = $('.judulfile').val();
+
+			
+				var formData = new FormData();
+					formData.append('tipe', tipe);
+					formData.append('namainstitusi', namainstitusi);
+					formData.append('tingkatinstitusi', tingkatinstitusi);
+					formData.append('lokasi', lokasi);
+					formData.append('startdateText', startdateText);
+					formData.append('enddateText', enddateText);
+
+					formData.append('totalbiaya', totalbiaya);
+					formData.append('nim', nim);
+					formData.append('email', email);
+					formData.append('notelp', notelp);
+					formData.append('judul', judul);
+					formData.append('judulsi', judulsi);
+					formData.append('judulfile', judulfile);
+
+				$.ajaxSetup({
+					headers: {
+						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					}
+				});
+				jQuery.ajax({
+					url: "{{url('/')}}/registrasi/func_insertkerjapraktek",
+					type: 'POST',
+					cache: false, 
+					processData: false,
+					contentType: false,
+					data: formData,
+					success: function (result) {
+						// console.log(result);
+						
+						$("#errorMessages").html(result);
+						$("#errorMessages").fadeIn(500);
+						window.scrollTo(0, 100);
+						setTimeout(function(){ location.reload(); }, 1000);
+
+					}
+					
+				});
+				console.log('berhasil');
+
+
+		};
         
     </script>
 @endsection
